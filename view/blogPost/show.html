@@ -1,0 +1,35 @@
+<?php
+use Maurerd\Webentwicklung\Http\Session;
+
+// Session starten
+$session = new Session();
+$session->start();
+
+// Auf die Werte in der Session zugreifen
+$address = $session->getValue('address');
+$description = $session->getValue('description');
+$package = $session->getValue('package');
+?>
+
+<div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <form action="/Auftrag/senden" method="post" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <h2 class="card-title text-center ">Ihr Auftrag</h2>
+                        <ul class="list-group list-group-flush" id="list-group">
+                            <li class="list-group-item"><strong>Adresse:</strong> <?= $address ?></li>
+                            <li class="list-group-item"><strong>Beschreibung:</strong> <?= $description ?></li>
+                            <li class="list-group-item"><strong>Paket:</strong> <?= $package ?></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-dark btn-lg btn-block" type="submit">Auftrag abschicken</button>
+                        <input type="hidden" name="package">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

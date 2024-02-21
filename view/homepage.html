@@ -1,0 +1,164 @@
+<div class="container-fluid-no-padding" id="landing-page">
+    <div class="main-video-container">
+        <video autoplay class="main-video hidden-xs" loop muted playsinline preload="auto"
+               src="/assets/DroneVideoHomePage.mp4"
+               title="Eine Sammlung von Drohnenaufnahmen der von MyDrone angebotenen Industrien"
+               type="video/mp4"></video>
+        <div class="title-button-container padding">
+            <h1 class="title-style uppercase-style">IHR PARTNER FÜR DROHNENAUFNAHMEN</h1>
+            <button data-id="#categories" onclick="scrollToCategories()"
+                    class="center-block select-category-button uppercase-style">Drohnenflug auswählen
+            </button>
+        </div>
+    </div>
+    <div class="main-landing-container">
+        <div class="landing-content container-fluid-no-padding">
+            <div class="select-category-container">
+                <p class="company-description">Erleben Sie Ihre Umgebung aus einer ganz neuen Perspektive! Buchen Sie
+                    jetzt einen Drohnenflug bei HomeFly und lassen Sie sich von atemberaubenden Luftaufnahmen
+                    beeindrucken. Unser professionelles Team bietet Ihnen maßgeschneiderte Drohnendienstleistungen für
+                    jeden Anlass. Von der Erstellung beeindruckender Marketingmaterialien bis hin zu effizienten
+                    Inspektionsflügen - wir haben für jedes Projekt die passende Lösung. Lassen Sie uns Ihre Ideen und
+                    Vorstellungen umsetzen und Ihnen ein einzigartiges Erlebnis bieten. Kontaktieren Sie uns noch heute
+                    und buchen Sie Ihren unvergesslichen Drohnenflug!</p>
+                <p class="select-category-title" id="categories">Kategorien:</p>
+            </div>
+        </div>
+        <form action="/Auftrag/{category}/form" method="POST" enctype="multipart/form-data">
+            <section class="section bg-dark">
+                <div class="row">
+                    <div class="col-md-6 p-5" style="color: white;">
+                        <input type="hidden" name="category_id_1" value=1>
+                        <h2 class="section-title mb-5" id="wohnimmobilien">Wohnimmobilien</h2>
+                        <p class="section-text">Erleben Sie Ihre Immobilie aus der Vogelperspektive! <br> Ob
+                            Einfamilienhaus,
+                            Mehrfamilienhaus oder Luxusvilla - unser Drohnendienstleister erstellt atemberaubende
+                            Aufnahmen und bietet Ihnen somit eine einzigartige Möglichkeit, Ihr Zuhause aus einem neuen
+                            Blickwinkel zu betrachten. <br> Von Immobilienmaklern bis hin zu privaten
+                            Hausbesitzern kann jeder von professionellen Drohnenfotos und -videos profitieren, um
+                            Immobilien auf eine einzigartige Weise zu präsentieren oder zu inspizieren. <br>Mit unseren
+                            Drohnenflügen
+                            können Sie Ihre Immobilie aus verschiedenen Perspektiven präsentieren und so das Interesse
+                            potenzieller Kunden wecken.</p>
+                        <button type="submit" name="category_id" value=1 class="btn btn-outline-light">Wählen</button>
+                    </div>
+                    <div class="col-md-6 p-0">
+                        <img src="/assets/Wohnimmobilien.jpg" class="img-fluid" alt="Wohnimmobilien">
+                    </div>
+                </div>
+            </section>
+            <!-- Zweiter Abschnitt -->
+            <section class="section bg-light">
+                <div class="row">
+                    <div class="col-md-6 p-0">
+                        <input type="hidden" name="category_id_2" value=2>
+                        <img src="/assets/Bauindustrie.jpg" class="img-fluid" alt="Bauindustrie">
+                    </div>
+                    <div class="col-md-6 p-5">
+                        <h2 class="section-title mb-5" id="bauindustrie">Bauindustrie</h2>
+                        <p class="section-text">Erhalten Sie genaue und detaillierte Aufnahmen von Baustellen, um den
+                            Fortschritt Ihrer Projekte zu dokumentieren. Unsere Drohnenflüge ermöglichen Ihnen eine
+                            schnelle und effektive Überwachung von Baustellen und liefern Ihnen hochwertiges
+                            Bildmaterial für Präsentationen und Berichte. Präsentieren Sie ihr Bauunternehmen auf Social
+                            Media und werbe Sie für neue Mitarbeiter oder neuen Kunden.</p>
+                        <button type="submit" name="category_id" value=2 class="btn btn-outline-dark">Wählen</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Dritter Abschnitt -->
+            <section class="section bg-dark">
+                <div class="row">
+                    <div class="col-md-6 p-5" style="color: white;">
+                        <input type="hidden" name="category_id_3" value=3>
+                        <h2 class="section-title mb-5" id="fabrikenMuseen">Fabriken & Museen</h2>
+                        <p class="section-text">Machen Sie beeindruckende Aufnahmen von Produktionsanlagen oder
+                            Ausstellungsstücken aus der Luft. Unsere Drohnenflüge ermöglichen Ihnen eine einzigartige
+                            Perspektive und liefern Ihnen hochwertiges Bildmaterial für Marketingzwecke oder
+                            Dokumentationen oder für ein Werbevideo auf Instagram, Facebook und co..
+                            Co..</p>
+                        <button type="submit" name="category_id" value=3 class="btn btn-outline-light">Wählen</button>
+                    </div>
+                    <div class="col-md-6 p-0">
+                        <img src="/assets/Museum.jpg" class="img-fluid" alt="Fabriken-Museen">
+                    </div>
+                </div>
+            </section>
+            <!-- Vierter Abschnitt -->
+            <section class="section bg-light">
+                <div class="row">
+                    <div class="col-md-6 p-0">
+                        <input type="hidden" name="category_id_4" value=4>
+                        <img src="/assets/Hotel.jpg" class="img-fluid" alt="Hotel und Gastronomie/Firmengelände">
+                    </div>
+                    <div class="col-md-6 p-5">
+                        <h2 class="section-title mb-5" id="hotels-gastronomie">Hotels & Gastronomie</h2>
+                        <p class="section-text">Ihr Hotel oder Restaurant ist einzigartig und verdient es, aus der Luft
+                            bewundert zu werden! Unsere Drohnen machen es möglich. Wir bieten Ihnen eine einmalige
+                            Chance, Ihre Immobilie aus einem neuen Blickwinkel zu erleben und Kunden zu begeistern. Ob
+                            innen oder außen wir stellen Ihr Hotel/Restaurant ins Rampenlicht. Repräsentieren Sie sich
+                            mit aktuellen Aufnahmen auf Social Media.</p>
+                        <button type="submit" name="category_id" value=4 class="btn btn-outline-dark">Wählen</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Fünfter Abschnitt -->
+            <section class="section bg-dark">
+                <div class="row">
+                    <div class="col-md-6 p-5" style="color: white;">
+                        <input type="hidden" name="category_id_5" value=5>
+                        <h2 class="section-title mb-5" id="firmengelände-firmenevents">Firmengelände & Firmenevents</h2>
+                        <p class="section-text">Ob Firmenjubiläum, Weihnachtsfeier oder Team-Event - unser
+                            Drohnendienstleister bietet Ihnen eine spektakuläre Möglichkeit, Ihre Firmenveranstaltung
+                            aus der Vogelperspektive zu erleben. Machen Sie Ihre Veranstaltung unvergesslich und buchen
+                            Sie einen Drohnenflug bei uns! Teilen Sie Ihre spektakulären Aufnahmen anschließend auf
+                            Ihren Social Media Kanälen und begeistern Sie Ihre Follower mit atemberaubenden Bildern.
+                            Kontaktieren Sie uns jetzt und wir machen Ihre Firmenveranstaltung zu einem echten
+                            Highlight!</p>
+                        <button type="submit" name="category_id" value=5 class="btn btn-outline-light">Wählen</button>
+                    </div>
+                    <div class="col-md-6 p-0">
+                        <img src="/assets/FirmenGelände.jpg" class="img-fluid" alt="Sportstätten">
+                    </div>
+                </div>
+            </section>
+            <!-- Sechster Abschnitt -->
+            <section class="section bg-dark">
+                <div class="row">
+                    <div class="col-md-6 p-0">
+                        <div class="d-flex flex-wrap h-100">
+                            <div class="w-50 h-100">
+                                <img src="/assets/Sport.jpg" class="img-fluid h-100" alt="Sportaktivitäten"
+                                     style="width: 100%; object-fit: cover; object-position: center;">
+                            </div>
+                            <div class="w-50 h-100">
+                                <img src="/assets/Tennishalle.jpg" class="img-fluid h-100" alt="Sportstätten"
+                                     style="width: 100%; object-fit: cover; object-position: center;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 bg-light p-5">
+                        <h2 class="section-title mb-5" id="sportaktivitäten-sportstätten">Sportaktivitäten & Sportstätten</h2>
+                        <p class="section-text">Erhalten Sie beeindruckende Aufnahmen von sportlichen Aktivitäten aus
+                            der Luft. Ob Skifahren, Surfen oder Radfahren - unsere Drohnenflüge bieten Ihnen eine
+                            einzigartige Perspektive und liefern Ihnen hochwertiges Bildmaterial für persönliche
+                            Erinnerungen oder Marketingzwecke. <br>
+                            Erhalten Sie spektakuläre Aufnahmen von Sportstadien, -plätzen oder -arenen aus der Luft.
+                            Unsere Drohnenflüge ermöglichen Ihnen eine einzigartige Perspektive und liefern Ihnen
+                            hochwertiges Bildmaterial für Präsentationen oder Werbekampagnen</p>
+                        <button type="submit" name="category_id" value=6 class="btn btn-outline-dark">Wählen</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>
+<div id="toast" data-delay="10000" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+     data-login-message="">
+    <div class="toast-header">
+        <strong class="me-auto">Nachricht</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        <span id="toast-message"></span>
+    </div>
+</div>

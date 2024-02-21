@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Register form -->
+<div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card border-0 shadow rounded-3">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Registrieren</h5>
+                    <form action="/auth/register" method="post">
+                        <div class="mb-3">
+                            <label for="form_username" class="form-label">E-Mail Adresse</label>
+                            <input type="email" id="form_username" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_password" class="form-label">Passwort</label>
+                            <input type="password" id="form_password" name="password" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="form_customer_type" class="form-label">Kundentyp</label>
+                            <select id="form_customer_type" name="customer_type" class="form-select" required>
+                                <option value="">Auswählen</option>
+                                <option value="privatKunde">Privat Kunde</option>
+                                <option value="Geschäftskunde">Geschäftskunde</option>
+                            </select>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Registrieren</button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-3">Bereits ein Konto?</p>
+                    <form class="d-grid gap-2" role="search" action="/auth/login/form">
+                        <button class="btn btn-outline-dark " type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="toast" data-delay="10000" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">Nachricht</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        <span id="toast-message"></span>
+    </div>
+</div>

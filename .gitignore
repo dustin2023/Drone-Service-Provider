@@ -1,0 +1,12 @@
+# IDE meta data
+.idea
+.vscode
+
+.env
+# Local caches
+cache/*
+!cache/.gitkeep
+
+# Depencencies should be excluded
+vendor
+node_modules

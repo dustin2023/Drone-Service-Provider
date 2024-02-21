@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark nav-backdrop-filter bg-light-transparent">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img class="change-icon-color" src="/assets/air-drone-icon.svg" alt="air-drone" width="30" height="24">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="padding-left: 2rem;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Kategorien
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="scrollToWohnimmobilien()">Wohnimmobilien</a></li>
+                        <li><a class="dropdown-item" onclick="scrollToBauindustrie()">Bauindustrie</a></li>
+                        <li><a class="dropdown-item" onclick="scrollToFabrikenMuseen()">Fabriken & Museen</a></li>
+                        <li><a class="dropdown-item" onclick="scrollToHotelsGastronomie()">Hotels & Gastronomie</a></li>
+                        <li><a class="dropdown-item" onclick="scrollToFirmengelaendeEvents()">Firmengelände &
+                            Firmenevents</a></li>
+                        <li><a class="dropdown-item" onclick="scrollToSportaktivitaetenSportstaetten()">Sportaktivitäten
+                            & Sportstätten</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" style="margin-right: 1rem;" href="#">Über uns</a>
+                </li>
+            </ul>
+            <?php if(isset($_SESSION['isLoggedIn'])):?>
+            <a href="/auth/logout" class="btn btn-outline-secondary bg-dark"
+               style="text-decoration: none; color: white;">Logout</a>
+            <?php else:?>
+            <a href="/auth/login/form" class="btn btn-outline-secondary bg-dark"
+               style="text-decoration: none; color: white;">Login</a>
+            <?php endif;?>
+        </div>
+    </div>
+</nav>
